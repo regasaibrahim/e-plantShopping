@@ -7,7 +7,7 @@ import './CartItem.css';
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
-  // Calculate total amount for all products in the cart
+ 
   const calculateTotalAmount = () => {
     return cart.reduce((total, item) => total + item.cost * item.quantity, 0);
   };
@@ -31,13 +31,13 @@ import './CartItem.css';
     dispatch(removeItem(item.name));
   };
 
-  // Calculate total cost based on quantity for an item
+ 
   const calculateTotalCost = (item) => {
     return item.cost * item.quantity;
   };
 
   const handleCheckoutShopping = (e) => {
-    alert('Functionality to be added for future reference');
+    alert(`Your Total Amount is $${calculateTotalAmount()}`);
   };
 
   return (
